@@ -41,3 +41,7 @@ A interface de demonstração usa dados ilustrativos. Os botões abrem a prévia
 - `IMAGENS-IA.md`: registro das imagens ilustrativas.
 
 Os planos ficam na landing page `precos.html`, aberta em nova aba pelo menu da home. A página antiga de comparação redireciona para essa página de preços. Não há comparador de concorrentes nesta versão.
+
+## Ajustes de UX
+
+A revisão mantém a identidade visual original e melhora a leitura, o contraste, a navegação móvel, o foco por teclado e as áreas de toque. O painel mantém as cinco telas disponíveis no celular. Os ajustes compartilhados ficam em `dist/ux-refinements.css` e `dist/ux.js`.
