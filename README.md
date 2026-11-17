@@ -40,4 +40,4 @@ A interface de demonstração usa dados ilustrativos. Os botões abrem a prévia
 - `scripts/build.mjs`: verificação dos arquivos para publicação.
 - `IMAGENS-IA.md`: registro das imagens ilustrativas.
 
-A página antiga de comparação redireciona para a seção de preços. Não há comparador de concorrentes nesta versão.
+Os planos ficam na landing page `precos.html`, aberta em nova aba pelo menu da home. A página antiga de comparação redireciona para essa página de preços. Não há comparador de concorrentes nesta versão.
