@@ -1,10 +1,19 @@
-/* Start once on page load. Reduced-motion users receive the completed chart. */
+/* Pause outside the viewport and honor reduced-motion preferences. */
 (() => {
  const visual=document.querySelector('.reach-visual');
  if(!visual)return;
  const media=matchMedia('(prefers-reduced-motion: reduce)');
- document.addEventListener('visibilitychange',()=>{
-  visual.querySelectorAll('.scale-column,.scale-trajectory,.scale-arrow').forEach(el=>el.style.animationPlayState=document.hidden?'paused':'running');
- });
- if(media.matches)visual.classList.add('motion-reduced');
+ const svg=visual.querySelector('svg');
+ let visible=true;
+ function sync(){
+  const paused=document.hidden||!visible||media.matches;
+  visual.classList.toggle('is-paused',paused);
+  if(typeof svg.pauseAnimations==='function'){
+   if(paused)svg.pauseAnimations();else svg.unpauseAnimations();
+  }
+ }
+ document.addEventListener('visibilitychange',sync);
+ media.addEventListener('change',sync);
+ if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync()},{threshold:.05}).observe(visual);
+ sync();
 })();

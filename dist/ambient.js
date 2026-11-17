@@ -59,4 +59,3 @@
  media.addEventListener('change',e=>{reduced=e.matches;sync();});
  resize();sync();
 })();
-

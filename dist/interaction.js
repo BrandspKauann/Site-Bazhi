@@ -69,4 +69,3 @@
  if(panel)new MutationObserver(()=>{register();schedule();}).observe(panel,{childList:true});
  register();update();document.documentElement.classList.add('scroll-motion-ready');
 })();
-
